@@ -3,8 +3,14 @@ Test for collaborative profile documentation
 Notes / ideas for structure:
 TODO: Check and harnonice towards Transmodel and NeTEx standard for naming
 Align structure with Transmodel and NeTEx 
-
-Short introduction to each segment?  
+# Table of Contents
+- [Foreword](#foreword)
+- [MMTIS Requirments](#mmtis-requrements)
+- [Glosary](#glosary)
+- [Frames](#frames)
+- [Common](#common)
+- [Reference Data](#reference-data)
+- [Use Cases](#use-case)
 # Foreword
 **TODO:** Write a foreword to NeTEx, how to understand the parts and profiles, e.g. content like this:
 - Introduction to NeTEx

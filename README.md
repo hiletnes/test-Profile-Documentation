@@ -4,48 +4,47 @@ Notes / ideas for structure:
 TODO: Check and harnonice towards Transmodel and NeTEx standard for naming
 Align structure with Transmodel and NeTEx 
 
-Short introduction to each segment?
+Short introduction to each segment?  
+# Foreword
+**TODO:** Write a foreword to NeTEx, how to understand the parts and profiles, e.g. content like this:
+- Introduction to NeTEx
+- Profiles
+- Standard (NeTEx) vs Profile
+# MMTIS Requrements
+**TODO:** Do we need this part?
+# Glosary
+**TOOD:** Glosary and Terms, table of words?
+# Frames
+**TODO:** Short intro to frames, what iis ist and what it contains
+- [CompositFrame](/01-Frames/01-CompositFrame.markdown)
+- [ResourceFrame](/01-Frames/02-ResourceFrame.markdown)
+- [SiteFrame](/01-Frames/03-SiteFrame.markdown)
+- [ServiceFrame](/01-Frames/04-ServiceFrame.markdown)
+- [ServiceCalendarFrame](/01-Frames/05-ServiceCalendarFrame.markdown)
+- [TimetableFrame](/01-Frames/06-TimetableFrame.markdown)
+- [VehicleScheduleFrame](/01-Frames/07-VehicleScheduleFrame.markdown)
+- [DriverScheduleFrame](/01-Frames/08-DriverScheduleFrame.markdown)
+- [FareFrame](/01-Frames/09-FareFrame.markdown)
+# Common
+**TODO:** Short intro to Common
+- [DateFormats](/02-Common/01-DateFormats.markdown)
+- [Calendars](/02-Common/02-Calendars.markdown)
+# Reference Data
+**TOOD:** Short about Reference Data
+- [Stops](/03-ReferrenceData/01-Stops.markdown)
+- [Organisations](/03-ReferrenceData/02-Organisations.markdown)
+- [VehicleType](/03-ReferrenceData/03-VehicleType.markdown)
+- [Vehicle](/03-ReferrenceData/04-Vehicle.markdown)
+# Use Case
+**TODO:** Short introduction to Use Case, when to use and why we use this way of describing the use of profiles'
+Each Use Case should have what to fill out, frames and objects and real examples
 
-	• Foreword
-		○ Short introduction about NeTEx, profiles and common objects 
-			§ Codespace
-		○ Versions
-		○ Validity
-		○ PublicationDelivery
-	• MMTIS Requrements
-	• Glossary 
-		○ Description of each module translated to actual language (if needed)
-	• Frames
-		○ Introduction to frames, what it is and what it contains
-		○ CompositFrame
-		○ ResourceFrame
-		○ SiteFrame
-		○ ServiceFrame
-		○ ServiceCalendarFrame
-		○ Timetable frame
-		○ VehicleScheduleFeame
-		○ DriverSheduleFrame
-		○ FareFrame
-	• Common
-		○ Dateformats
-		○ Calendars
-	• Referrence data
-		○ Stops
-		○ Organisations
-		○ Vehicle type
-		○ Vehicle
-	• Use Case
-		○ What to fill out when exhanging types of data, use case spesific documentation
-		○ Stops
-			§ With real examples
-			§ Accesibility - examples with pictures (or as Johan is doing it with stops)
-		○ Organisation
-			§ With real examples
-		○ Timetable
-			§ With real examples
-		○ Timetable when booking 
-			§ With real examples
-		○ FareZones
-			§ With real examples
-		○ Fares
-			§ Documentation of objects and field to use
+Proposed Use Cases to be modeled in examples and seperate doc files her:
+- Stops
+	- Accesibility - examples with pictures (as Johan is doing with stops)
+- Organisations
+- Timetable
+- Timetable when booking
+- FareZones
+- Fares
+	- Documentation of objects and fields to use

@@ -13,9 +13,17 @@ Align structure with Transmodel and NeTEx
 - [Use Cases](#use-case)
 # Foreword
 **TODO:** Write a foreword to NeTEx, how to understand the parts and profiles, e.g. content like this:
-- Introduction to NeTEx
-- Profiles
-- Standard (NeTEx) vs Profile
+<details>
+<summary>Introduction to NeTEx</summary>
+</details>
+<details>
+<summary>Profiles</summary>
+</details>
+<details>
+<summary>Standard (NeTEx) vs Profile</summary>
+</details>
+<br/>
+
 # MMTIS Requrements
 **TODO:** Do we need this part?
 # Glosary

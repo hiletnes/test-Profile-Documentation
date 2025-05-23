@@ -1,4 +1,4 @@
-<h1 style="color:darkblue;">DatedServiceJourney</h1>
+# DatedServiceJourney
   
 >[!NOTE]
 >A particular ServiceJourney of a vehicle on a particular OperatingDay.

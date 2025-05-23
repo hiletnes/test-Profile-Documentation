@@ -53,6 +53,10 @@ Align structure with Transmodel and NeTEx
 **TODO:** Short introduction to Use Case, when to use and why we use this way of describing the use of profiles'
 Each Use Case should have what to fill out, frames and objects and real examples
 
+Use Cases and descriptions
+- [How to use FareZone](/04-Use%20case/01-Fares-HowToUseFareZone.markdown)
+
+
 Proposed Use Cases to be modeled in examples and seperate doc files her:
 - Stops
 	- Accesibility - examples with pictures (as Johan is doing with stops)

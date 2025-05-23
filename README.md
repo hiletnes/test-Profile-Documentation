@@ -54,7 +54,7 @@ Align structure with Transmodel and NeTEx
 Each Use Case should have what to fill out, frames and objects and real examples
 
 Use Cases and descriptions
-- [How to use FareZone](/04-Use%20case/01-Fares-HowToUseFareZone.markdown)
+- [How to use FareZone](/04-Use%20case/Fares-HowToUseFareZone.markdown)
 
 
 Proposed Use Cases to be modeled in examples and seperate doc files her:

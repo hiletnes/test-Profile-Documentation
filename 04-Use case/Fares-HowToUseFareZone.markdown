@@ -3,7 +3,8 @@
 ## Introduction to FareZones
 
 FareZones define the geographic areas where a ticket is valid for use. They are also used to calculate the fare between two stops by counting the number of FareZones a journey passes through.  
-> [!NOTE] The number of FareZones a ticket is valid for may differ from the number used in fare calculation.
+>[!NOTE] 
+>The number of FareZones a ticket is valid for may differ from the number used in fare calculation.
 
 Each FareZone is managed by a transport authority, referenced in the `authorityRef` field. The valid area for a FareZone is described by a polygon in the `geometry` field.
 

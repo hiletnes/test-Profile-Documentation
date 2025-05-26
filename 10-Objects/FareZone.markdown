@@ -14,7 +14,7 @@
 |-|-|-|-|
 |Id| String with codespace and unique identifier|BRA:FareZone:2|<font color="red"> 1:1|
 |Name|Name of the zone| Ål|<font color="red"> 1:1|
-|Geometry|Geographic area/polygon|*(no example provided)*|<font color="red"> 1:1|
+|Geometry|Geographic area/polygon. <br>Mandatory if `scopingMethod` is `implicitSpatialProjection` <br/> optional if `scopingMethod` is `explicitStops`|*(no example provided)*|<font color="red"> 0:1|
 |privateCode|Zone number assigned by the owner| 119|<font color="red"> ?:?|
 |authorityRef|Reference to the Authority in the route data|BRA:Authority:1|<font color="red"> ?:?|
 |scopingMethod|How stops within the zone are included|explicitStops|<font color="red"> ?:?|

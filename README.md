@@ -10,6 +10,7 @@ Align structure with Transmodel and NeTEx
 - [Frames](#frames)
 - [Common](#common)
 - [Reference Data](#reference-data)
+- [Publish Data](#publish-data)
 - [Use Cases](#use-case)
 # Foreword
 **TODO:** Write a foreword to NeTEx, how to understand the parts and profiles, e.g. content like this:
@@ -49,6 +50,8 @@ Align structure with Transmodel and NeTEx
 - [Organisations](/03-ReferrenceData/02-Organisations.markdown)
 - [VehicleType](/03-ReferrenceData/03-VehicleType.markdown)
 - [Vehicle](/03-ReferrenceData/04-Vehicle.markdown)
+# Publish Data
+**TODO** Short introduction to Publish Data, this chapter is about how the data is published i different scenarioes/UseCases
 # Use Case
 **TODO:** Short introduction to Use Case, when to use and why we use this way of describing the use of profiles'
 Each Use Case should have what to fill out, frames and objects and real examples

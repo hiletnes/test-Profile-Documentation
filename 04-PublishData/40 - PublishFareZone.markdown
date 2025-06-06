@@ -6,7 +6,7 @@
   - [Geometry](#geometry)
 - [Publication to National Access Point (NAP)](#publish-farezone-to-national-access-point-nap)
 
-# Fares – How to Use FareZones
+# Fares – How to publich FareZones
 
 ## Introduction to FareZones
 

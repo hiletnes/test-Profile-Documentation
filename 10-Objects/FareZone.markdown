@@ -1,14 +1,25 @@
 # FareZone
 
->[!NOTE] 
->FareZone descripe a area for travel
->
->FareZone inherits from TariffZone and add important fields not pressent in TariffZone
+## Introduction to FareZones
 
-<details open>
-<summary>
-  <b>Full overview</b>
-</summary>
+FareZone inherits from TariffZone and add important fields not pressent in TariffZone
+>[!NOTE] 
+>In this profile, we don't use TariffZone as they lack needed information
+
+FareZones define the geographic areas where a ticket is valid for use. They are also used to calculate the fare between two stops by counting the number of FareZones a journey passes through.  
+>[!NOTE] 
+>The number of FareZones a ticket is valid for may differ from the number used in fare calculation.
+
+Each FareZone is managed by a transport authority, referenced in the `authorityRef` field. The valid area for a FareZone is described by a polygon in the `geometry` field.
+
+To calculate the price of a journey across multiple FareZones, each zone's neighbors must be specified. This is done in the `neighbours` field, which lists all neighboring FareZones separated by colons (`:`).
+
+## Grouping of FareZones
+
+In many cases, tickets are valid across a group of FareZones — for example, one county like **Buskerud** or a regional structure such as the **Kristiansand** area.
+
+The FareZone owner can group these zones into a [GroupOfTariffZones](/10-Objects/GroupOfTariffZones.markdown). Sales and ticketing systems refer to the `GroupOfTariffZones` rather than to each individual FareZone. This setup allows FareZone owners to update the included zones without requiring changes from client systems.
+
 
 | **Field**|**Description** |**Example**|**Cardinality**| 
 |-|-|-|-|

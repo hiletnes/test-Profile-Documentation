@@ -52,9 +52,13 @@ Align structure with Transmodel and NeTEx
 - [Vehicle](/03-ReferrenceData/04-Vehicle.markdown)
 # Publish Data
 **TODO** Short introduction to Publish Data, this chapter is about how the data is published i different scenarioes/UseCases
+- [How to publish FareZone](/04-PublishData/40-PublishFareZone.markdown)
 # Use Case
 **TODO:** Short introduction to Use Case, when to use and why we use this way of describing the use of profiles'
 Each Use Case should have what to fill out, frames and objects and real examples
+
+Use Cases and descriptions
+
 
 Proposed Use Cases to be modeled in examples and seperate doc files her:
 - Stops

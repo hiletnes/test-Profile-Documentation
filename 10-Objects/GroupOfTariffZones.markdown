@@ -1,21 +1,30 @@
 # GroupOfTariffZones
 
-**TODO** Description and introduction to GroupOfTariffZones (short)
+A grouping of TARIFF ZONEs dedicated to a functional purpose, e.g. all the zones in a
+zonal network, or a set of zones that use a specific tariff. A GROUP OF TARIFF ZONES that comprise all the zones in a network can be particulary useful when describing access rights given by fare products, e.g. a fare product allowing travel in all the zones in the network of an operator.
+
+Sales and ticketing systems can refer to the `GroupOfTariffZones` rather than to each individual FareZone. This setup allows FareZone owners to update the included zones without requiring changes from client systems.
+
+
 
 <details open>
 <summary>
   <b>Full overview</b>
 </summary>
 
-| **Field**|**Description** |**Example**|**Cardinality**| 
+| **Name**|**Type**|**Cardinality**|**Description** |
 |-|-|-|-|
-|id|String with codespace and unique identifier||<font color="red"> 1:1
-|name|Name of the group||<font color="red"> 1:1
-|description|Description||<font color="red"> 1:1
-|purposeOfGrouping|||<font color="red"> 1:1|
-|tariffZoneRef|Array of the FareZones to be included in the group. tariffZoneRef is wrapped in a "members" field||<font color="red"> 1:*|
+||GroupOfEntities||GROUP OF TARIFF ZONES inherits from GROUP OF ENTITIES|
+|id| GroupOfTariffZonesIdType| 1:1 |Identifier of a GroupOfTariffZones|
+|name|MulitilingualString|1:1|Name of the group|
+|description|MulitilingualString| 0:1| Description|
+|purposeOfGrouping|PurposeOfGroupingRef|1:1|The functional purpose of the grouping. In this profile the allowed values are `zonalNetwork`, `tariff`.|
+|members|TariffZoneRef|0:*|The TariffZones that are included in the group|
 </details>
 
+In order to use the GroupOfTariffZone to describe fare structure and access rigths, the name is considered mandatory so that it may be presented to travellers.
+
+TBD: The allowed values for purposeOfGrouping are `zonalNetwork`, `tariff`. They should be encoded as instances of `TypeOfValue` in a `ValueSet` and exchanged along with the data that reference them.
 
 ## Example GroupOfTariffZones
 

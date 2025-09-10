@@ -2,62 +2,80 @@
 
 ## Introduction to FareZones
 
-FareZone inherits from TariffZone and add important fields not pressent in TariffZone
+FareZone is a specialization of TariffZone. FareZone present additional concepts relating to the network that is needed to underpin fare structures.
 >[!NOTE] 
->In this profile, we don't use TariffZone as they lack needed information
+>This profile mandates the use of FareZone rather than TariffZone for any use case that aim to provide fare products and prices.
 
-FareZones define the geographic areas where a ticket is valid for use. They are also used to calculate the fare between two stops by counting the number of FareZones a journey passes through.  
+FareZones define the permanent zones of a network, and thus also the geographic areas where a ticket is valid for use. FareZones can be used to calculate the fare in several ways. In this profile the following are described:
+- *stage count with zone as unit*: the price between two stops is defined by counting the number of FareZones the journey passes through 
+- *zone to zone*: the price is stated based on a pair of origin and destination zones, possibly with restrictions on the route between the start and end zone
+- *flat for a group of zones*: see [GroupOfTariffZones](/10-Objects/GroupOfTariffZones.markdown)
+
 >[!NOTE] 
 >The number of FareZones a ticket is valid for may differ from the number used in fare calculation.
 
-Each FareZone is managed by a transport authority, referenced in the `authorityRef` field. The valid area for a FareZone is described by a polygon in the `geometry` field.
+Each FareZone is managed by a transport authority, referenced in the *authorityRef* field. ~~The valid area for a FareZone is described by a polygon in the `geometry` field. ~~
 
-To calculate the price of a journey across multiple FareZones, each zone's neighbors must be specified. This is done in the `neighbours` field, which lists all neighboring FareZones separated by colons (`:`).
+To calculate the price of a journey across multiple FareZones based on the count of zone traversals, each zone's neighburs must be specified. This is done in the `neighbours` element, which lists all neighbouring FareZones.
 
-## Grouping of FareZones
+#### Relating tariffs to the network
 
-In many cases, tickets are valid across a group of FareZones — for example, one county like **Buskerud** or a regional structure such as the **Kristiansand** area.
+For a trip planner or fare engine to be able to select the available fares, it must be possible to relate the spatial description of a FareZone to stops in a timetabled journey chosen by a traveller. This profile supports the following methods:
+- explicitly: membership of stops in a zone is stated by a link
+- implicitly by projection: membership is determined by examining if the coordinates of the stop is within the polygon that describes the zone. This method requires the polygon element on the zone. *EFIP draft says explicit only*
+Note that spatial containment do not always imply membership in a zone, e.g. a stop used for water transport mode is not automatically a member in a zone used for road based tariffs.
 
-The FareZone owner can group these zones into a [GroupOfTariffZones](/10-Objects/GroupOfTariffZones.markdown). Sales and ticketing systems refer to the `GroupOfTariffZones` rather than to each individual FareZone. This setup allows FareZone owners to update the included zones without requiring changes from client systems.
+The name and description of a FareZone is mandatory as it is customer facing when used as a fare structure, which describes where the customer may travel.
+
+FareZones can be grouped according to a functional purpose by use of a [GroupOfTariffZones](/10-Objects/GroupOfTariffZones.markdown)
 
 
-| **Field**|**Description** |**Example**|**Cardinality**| 
-|-|-|-|-|
-|Id| String with codespace and unique identifier|BRA:FareZone:2|<font color="red"> 1:1|
-|Name|Name of the zone| Ål|<font color="red"> 1:1|
-|Geometry|Geographic area/polygon. <br>Mandatory if `scopingMethod` is `implicitSpatialProjection` <br/> optional if `scopingMethod` is `explicitStops`|*(no example provided)*|<font color="red"> 0:1|
-|privateCode|Zone number assigned by the owner| 119|<font color="red"> ?:?|
-|authorityRef|Reference to the Authority in the route data|BRA:Authority:1|<font color="red"> ?:?|
-|scopingMethod|How stops within the zone are included|explicitStops|<font color="red"> ?:?|
-|zoneTopology| How the zones are mapped|tiled|<font color="red"> ?:?|
-|neighbours|Zones that can be traveled to|BRA:FareZone:3; BRA:FareZone:5|<font color="red"> ?:?|
-|publicCode|Additional letter or number identifying the zone to the public|B|<font color="red"> ?:?|
-|valid_from  valid_to|Controls when a zone becomes valid or expires (date fields)|*(dates, not specified in the example)*|<font color="red"> ?:?|
 
-</details>
+| **Name**|**Type**|**Cardinality**|**Description** |**Example**|
+|-|-|-|-|-
+||FareZone inherits from TariffZone|||
+|Id| FareZoneIdType | 1:1| Identifier of FareZone | |
+|`ValidBetween` | `ValidBetween`| `0:1`| Fromdate and todate for the FareZone, controls when a zone becomes valid or expires `Required in this profile?` ||
+|privateCodes| PrivateCode | 0:* | A list of private codes that uniquely identify the FareZone. May be used for inter-operating with other systems (v2.0)| 119|
+|`Name`| `MultilingualString`| `1:1` | Name of the FareZone `Required in this profile`| Ål |
+|`Description`| `MultilingualString`| `1:1` | Description of the FareZone `Required in this profile` | Ål kommune |
+|Polygon|gml:Polygon| 0:1| Geographic area/polygon associated with zone. <br>`Mandatory if `*scopingMethod*` is `*implicitSpatialProjection* <br/> optional if *scopingMethod* is *explicitStops*| |
+|publicCode| publicCodeStructure | 0:1 | Additional code identifying the zone to the public as an alternative to a name (v2.0)|B|
+|zoneTopology| ZoneTopologyEnum | `1:1` | Topology of the FareZones with regard to other zones. `Required in this profile` Allowed values: nested, tiled, sequence, overlappingSequence Present in NeTEx but not included in this profile: ~~ring, annular, other~~ | |
+|scopingMethod| ScopingMethodEnum | 0:1| How stops within the zone are included. Default is *explicitStops*. Allowed values: *explicitStops*, *implicitSpatialProjection*. Present in NeTEx but not included in this profile: ~~explicitPeripheryStops~~ ||
+|TransportOrganisationRef| (TransportOrganisationRef) OperatorRef or AuthorityRef| `1:1` |Reference to the organisation that manages the zone `Required in this profile` |BRA:Authority:1| |
+|neighbours|FareZoneRef| 0:*| Adjacent FareZones `Required in this profile for stage count using zones as unit`|BRA:FareZone:3; BRA:FareZone:5||
 
-# Detailed Explanation of the Fields
 
-## Introduction of TariffZone
+# Further details
 
-With the introduction of `TariffZone`, the old ID structure based on `codespace + privateCode` is deprecated. Now, zone IDs are decoupled from zone numbers, meaning they do not need to change if, for example, local ticketing systems are renumbered. It is recommended to avoid any logic that links zone numbers directly to the ID.
+## Naming Conventions 
 
-The `zone ID` should follow the format: `codespace:FareZone:<sequence_number>`.
+(updated according to https://github.com/NeTEx-CEN/NeTEx/pull/849)
 
-The local zone number is now moved to the `privateCode` field.
-
-## Naming Conventions
-
-Zone names can only be in one language, and this should be the local language. For example, zones in Norway should have names in Bokmål, Nynorsk, or local dialects. **Do not enter names in multiple languages** in the same field.
+The name of the zone is essential to convey to travellers where they can travel and so it is considered mandatory in this profile. The name must be given in the local language, and should include translated names if neccessary. 
+In Norway, all names including FareZone names should be present in Bokmål, Nynorsk and English. 
 
 - Names should not be abbreviated.
 - Avoid special characters.
-- Names should be identical or clearly recognizable to customers from other information channels.
-- If the `publicCode` field is introduced, the zone name must **not** contain a code.
+- Names should be identical or clearly recognizable to customers compared to naming used in other information channels.
+- If the *publicCode* element is included, the zone name must **not** contain a code.
 
-## Authority Reference
+Example: 
+```
+ <FareZone version="1" id="TRO:FareZone:1">
+    <Name>
+        <Text lang="nob">Storfjord og Kåfjord</Text>
+        <Text lang="nno">Storfjord og Kåfjord</Text>
+        <Text lang="en">Storfjord and Kåfjord</Text>
+    </Name>
+</FareZone>
+```
 
-The `authorityRef` field refers to an ID from the route data that is associated with the zone. A `FareZone` supports only **one** `authorityRef`. If other authorities need to use the same zone, a new zone must be created for that purpose. This new zone can be identical to the previous one but must have a unique ID and a different `authorityRef`.
+
+## TransportOrganisationRef restricted to AuthorityRef Reference (Norway)
+
+The `TransportOrganisationRef` element is ecpected to be an AuthorityRef, and to an ID from the route data that is associated with the zone. <font color="red"> TBD If other authorities need to use the same zone, a new zone must be created for that purpose. This new zone can be identical to the previous one but must have a unique ID and a different `authorityRef`</font>.
 
 ## ScopingMethod
 

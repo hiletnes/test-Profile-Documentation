@@ -10,6 +10,11 @@
 - [FareZone](/10-Objects/FareZone.markdown)
 - [GroupOfTariffZones](/10-Objects/GroupOfTariffZones.markdown)
 
+TBD Different publishing scenarios
+- [] Which Stop belong to which Zone(s), published in a SiteFrame
+- [] The definition of the FareZones will normally published as a separate document. Could be shared with other operators, and used by many different products. FareZones will be published in a FareFrame.
+- [] FareFrames that define zonal products wil use FareFrame with zone data as prerequisite 
+
 # Guideline to optional fields
 This chapter describes how optional fields should be filled out in different contexts.
 ## Geometry

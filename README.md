@@ -22,6 +22,43 @@ Notes / Ideas for structure:
 </details>
 <details>
 <summary>Standard (NeTEx) vs Profile</summary>
+
+**NeTEx** 
+
+	
+ NeTEx (Network Timetable Exchange) is a European CEN standard for exchanging public transport data. It defines a comprehensive and flexible XML-based format for:
+	- Transport networks (routes, stops, operators)
+- Timetables and schedules
+- Fare structures
+- Accessibility
+- Operational data
+
+	
+ NeTEx is modular, meaning it has different parts (frames) for different types of data. It’s designed to support national and international data exchange, especially for multimodal journey planning and passenger information systems.
+
+	
+ **Profiles**
+	
+ Profiles are subsets or specializations of NeTEx. They define which parts of NeTEx to use, and how to use them, for specific purposes or use cases. Profiles help ensure interoperability and consistency across systems and countries.
+🔹 EPIP – European Passenger Information Profile
+A profile of NeTEx focused on passenger information.
+Defines a minimum set of data needed for journey planning and real-time information.
+Used in systems like National Access Points (NAPs) across Europe.
+🔹 EPIAP – European Passenger Information Accessibility Profile
+Builds on EPIP, but adds accessibility data for persons with reduced mobility.
+Includes data about stop accessibility, vehicle features, and boarding/alighting conditions.
+Supports compliance with PRM TSI (Technical Specifications for Interoperability). 
+	
+**NeTEx vs Profiles**
+
+| **Feature**   | **NeTEx**                                      | **Profiles (EPIP, EPIAP, etc.)**                      |
+|---------------|------------------------------------------------|--------------------------------------------------------|
+| **Scope**     | Full standard with all data structures         | Subset tailored for specific use cases                |
+| **Flexibility** | Very flexible and comprehensive              | Restrictive to ensure interoperability                |
+| **Use**       | National/international data exchange           | Harmonized implementation across systems              |
+| **Complexity**| High – requires configuration                  | Lower – predefined structure                          |
+| **Examples**  | All NeTEx frames                               | EPIP, EPIAP, Nordic Profile, DELFI+                   |
+
 </details>
 <br/>
 

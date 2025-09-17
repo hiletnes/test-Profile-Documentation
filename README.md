@@ -6,7 +6,7 @@ Notes / Ideas for structure:
 # Table of Contents
 - [Foreword](#foreword)
 - [MMTIS Requirments](#mmtis-requrements)
-- [Glossary](#glosary)
+- [Glossary](#glossary)
 - [Frames](#frames)
 - [Common](#common)
 - [Reference Data](#reference-data)
@@ -27,7 +27,7 @@ Notes / Ideas for structure:
 
 # MMTIS Requrements
 **TODO:** Determine whether this section is necessary.
-# Glosary
+# Glossary
 **TODO:** Create a glossary of terms, possibly as a table of definitions.
 # Frames
 **TODO:** Add a short introduction to frames—what they are and what they contain.

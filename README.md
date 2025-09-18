@@ -96,7 +96,27 @@ Profiles are subsets or specializations of NeTEx. They define **which parts of N
 | JourneyFrequencyGroup | Defines frequency-based services rather than scheduled times. | Part 2: Timetables |
 # Frames
 **TODO:** Add a short introduction to frames—what they are and what they contain.
-- [CompositFrame](/01-Frames/01-CompositFrame.markdown)
+- [CompositeFrame](/01-Frames/01-CompositFrame.markdown)
+- # 🧩 Composite Frame in NeTEx
+
+## Introduction
+
+In NeTEx, a **Composite Frame** is a structural container that allows multiple data frames to be grouped together into a single, logical unit. It is used to organize related data elements—such as network definitions, timetables, fare structures, and accessibility information—into a coherent package for exchange or publication.
+
+### 🔹 Key Characteristics:
+- **Aggregation**: Combines several `Frames` (e.g., `ServiceFrame`, `TimetableFrame`, `FareFrame`) into one.
+- **Contextual Integrity**: Ensures that all included frames share a common context, such as a specific transport service or operational period.
+- **Modularity**: Supports modular data management, making it easier to reuse and maintain datasets.
+
+### 🔹 Use Cases:
+- Publishing a complete dataset for a transport operator.
+- Exchanging multimodal transport data between systems.
+- Structuring data for passenger information services.
+
+## Diagram
+
+![Composite Frame Diagram](RandomFileName_c9a3b22f-faa1-4111-955c-0b6e1be45561.png)
+
 - [ResourceFrame](/01-Frames/02-ResourceFrame.markdown)
 - [SiteFrame](/01-Frames/03-SiteFrame.markdown)
 - [ServiceFrame](/01-Frames/04-ServiceFrame.markdown)

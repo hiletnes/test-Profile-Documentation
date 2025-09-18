@@ -16,12 +16,6 @@ Notes / Ideas for structure:
 **TODO:** Write a foreword to NeTEx, explaining how to understand its parts and profiles. Suggested content structure:
 <details>
 <summary>Introduction to NeTEx</summary>
-</details>
-<details>
-<summary>Profiles</summary>
-</details>
-<details>
-<summary>Standard (NeTEx) vs Profile</summary>
 
 ## NeTEx
 
@@ -34,6 +28,10 @@ Notes / Ideas for structure:
 - Operational data
 
 NeTEx is **modular**, meaning it has different parts (frames) for different types of data. It’s designed to support **national and international data exchange**, especially for **multimodal journey planning** and **passenger information systems**.
+	
+</details>
+<details>
+<summary>Profiles</summary>
 
  ## Profiles
 
@@ -49,6 +47,13 @@ Profiles are subsets or specializations of NeTEx. They define **which parts of N
 - Includes data about **stop accessibility**, **vehicle features**, and **boarding/alighting conditions**.
 - Supports compliance with **PRM TSI** (Technical Specifications for Interoperability).
 
+	
+	
+</details>
+<details>
+<summary>Standard (NeTEx) vs Profile</summary>
+
+	
 	
 ## NeTEx vs Profiles
 

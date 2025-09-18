@@ -72,6 +72,28 @@ Profiles are subsets or specializations of NeTEx. They define **which parts of N
 **TODO:** Determine whether this section is necessary.
 # Glossary
 **TODO:** Create a glossary of terms, possibly as a table of definitions.
+| **Term** | **Definition** | **Schema/Model Reference** |
+|----------|----------------|-----------------------------|
+| StopPlace | A place where passengers can board or alight from vehicles. | IFOPT / Part 1 |
+| ScheduledStopPoint | A point in a journey pattern where a vehicle is scheduled to stop. | Part 2: Timetables |
+| JourneyPattern | A sequence of stop points defining a specific route taken by a vehicle. | Part 2: Timetables |
+| ServiceJourney | A single run of a vehicle following a journey pattern on a specific date/time. | Part 2: Timetables |
+| Line | A public transport route grouping several journey patterns. | Part 1: Network |
+| Operator | The organization responsible for running transport services. | Core |
+| FareStructureElement | A component of fare structure, e.g., zones, distance bands. | Part 3: Fares |
+| AccessRightInFrame | Rights to access specific transport services or data. | Part 3: Fares |
+| AccessibilityAssessment | Describes accessibility features of a stop or vehicle. | EPIP Profile |
+| ServiceCalendar | Defines operational days for services. | Part 2: Timetables |
+| VehicleJourney | A specific instance of a service journey, possibly with real-time updates. | SIRI Integration |
+| Route | A path through the network, composed of links and points. | Part 1: Network |
+| TimingPoint | A point used for timing control in a journey pattern. | Part 2: Timetables |
+| AvailabilityCondition | Conditions under which a service or fare is available. | Part 3: Fares |
+| TariffZone | A defined area used for fare calculation. | Part 3: Fares |
+| AccessMode | Mode of access to public transport (e.g., walking, cycling). | EPIP / Part 5 |
+| Quay | A specific boarding location within a StopPlace. | IFOPT |
+| NoticeAssignment | Assigns operational notices to entities like journeys or stops. | Part 2: Timetables |
+| DestinationDisplay | Text shown on vehicles to indicate destination. | EPIP / Part 2 |
+| JourneyFrequencyGroup | Defines frequency-based services rather than scheduled times. | Part 2: Timetables |
 # Frames
 **TODO:** Add a short introduction to frames—what they are and what they contain.
 - [CompositFrame](/01-Frames/01-CompositFrame.markdown)

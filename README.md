@@ -1,6 +1,10 @@
 # test-Profile-Documentation
 This is a test for collaborative profile documentation
 Notes / Ideas for structure:
+## 📚 Documentation
+
+- [OSDM](https://osdm.io
+
 - **TODO:** Review and harmonize naming conventions with the Transmodel and NeTEx standards.
 - Align the structure with Transmodel and NeTEx.
 # Table of Contents
